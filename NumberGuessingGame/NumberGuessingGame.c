@@ -63,6 +63,7 @@ int randNum() {
     return ranDig;
 }
 
+//prints the menu and gets user input
 int menu() {
     int uInput;
     printf("Press 1 to play a game.\n");
