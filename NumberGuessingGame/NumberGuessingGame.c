@@ -21,13 +21,54 @@ Steps:
     - declare variables and assign.
 3.) use while loops and if else statements.
 4.) make any necessary additional methods.
+    - random num generator for 1 - 10.
 5.) use file reading and writing to update a file that saves the max num the user saved.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <time.h>
 
 int main() {
-    
+    int answer, uGuess, uInput;
+    uInput = menu();
+    answer = randNum();
+    do {
+        if (uInput = 1) {
+            do {
+                printf("Guess a number from 1-10: ");
+                scanf("%d", &uGuess);
+                if (uGuess == answer) {
+                    printf("correct!");
+                    break;
+                } else {
+                    printf("wrong.  Guess again.");
+                }
+            }while (uGuess != answer);
+        }
+        
+    } while (uInput != 3);
+}
+
+//gets random number from 1 - 10
+int randNum() {
+    int ranDig;
+    time_t t;
+
+    srand((unsigned) time(&t));
+
+    ranDig = (rand() % 10) + 1;
+
+    return ranDig;
+}
+
+int menu() {
+    int uInput;
+    printf("Press 1 to play a game.\n");
+    printf("Press 2 to change the max number.\n");
+    printf("Press 3 to quit.");
+    scanf("%d", &uInput);
+
+    return uInput;
 }
